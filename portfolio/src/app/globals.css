@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #050505;
+  --color-surface: #121212;
+  --color-text-primary: #ededed;
+  --color-text-secondary: #888888;
+  --color-accent-glow: #00d1ff;
+  --color-accent-secondary: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-accent-glow: var(--color-accent-glow);
+  --color-accent-secondary: var(--color-accent-secondary);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent-glow) 60%, #000 40%);
+  color: var(--color-accent-secondary);
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), "Playfair Display", serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), "Inter", sans-serif;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono), "JetBrains Mono", monospace;
+  }
+}
